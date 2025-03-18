@@ -1,4 +1,3 @@
-# arcpylearningModules
 # Learning Arcpy with Python: Practical Guide for GIS Professionals
 
 ## Introduction
