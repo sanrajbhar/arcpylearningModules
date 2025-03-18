@@ -27,7 +27,6 @@ feature_classes = arcpy.ListFeatureClasses()
 print("Feature Classes:", feature_classes)
 ```
 
-📌 **Task:** Modify the script to list all shapefiles (`.shp`) in a directory.
 
 ---
 
@@ -47,7 +46,6 @@ fields = [f.name for f in arcpy.ListFields(fc)]
 print("Fields:", fields)
 ```
 
-📌 **Task:** Write a script to check if a feature class has a field called "RoadType" and add it if missing.
 
 ---
 
@@ -59,7 +57,6 @@ print("Fields:", fields)
 arcpy.Buffer_analysis("Roads.shp", "Roads_Buffer.shp", "100 meters")
 ```
 
-📌 **Task:** Create a script to clip a land parcel feature class using a study area boundary.
 
 ### Handling Errors
 
@@ -72,29 +69,9 @@ except arcpy.ExecuteError:
 
 ---
 
-## Module 4: Spatial Analysis with Arcpy
 
-### Selecting Features by Attribute and Location
 
-```python
-arcpy.SelectLayerByAttribute_management("Roads", "NEW_SELECTION", "RoadType = 'Highway'")
-```
-
-📌 **Task:** Select all buildings within 500 meters of a major road.
-
-### Working with Rasters
-
-```python
-from arcpy.sa import *
-ndvi = (Raster("NIR.tif") - Raster("Red.tif")) / (Raster("NIR.tif") + Raster("Red.tif"))
-ndvi.save("NDVI_Output.tif")
-```
-
-📌 **Task:** Calculate slope from a DEM raster.
-
----
-
-## Module 5: Advanced Scripting & Custom Tools
+## Module 4: Advanced Scripting & Custom Tools
 
 ### Creating Custom Geoprocessing Tools
 
@@ -107,8 +84,6 @@ output_fc = arcpy.GetParameterAsText(1)
 arcpy.Buffer_analysis(input_fc, output_fc, "500 Meters")
 ```
 
-📌 **Task:** Build a Python script tool that allows users to select an input shapefile and apply a buffer.
-
 ### Integrating Arcpy with Pandas
 
 ```python
@@ -119,7 +94,6 @@ df = pd.DataFrame(data, columns=fields)
 print(df.head())
 ```
 
-📌 **Task:** Export GIS attribute data to an Excel file.
 
 ---
 
@@ -130,7 +104,6 @@ With Arcpy and Python, GIS professionals can automate workflows, perform spatial
 🚀 **Next Steps:**
 
 - Try automating a repetitive GIS task in your current projects.
-- Explore ArcGIS Notebooks and REST API for web GIS automation.
-- Join GIS communities and share your scripts!
+- Explore ArcGIS Notebooks 
 
 Happy Coding! 🎯
